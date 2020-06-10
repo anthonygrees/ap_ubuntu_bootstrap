@@ -24,11 +24,11 @@ NODE_NAME=Ubuntu-${YOUR_NAME}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 
 
 /bin/echo 'log_location     STDOUT' >> /etc/chef/client.rb
 /bin/echo -e "chef_server_url 'https://#{node['environment']['automate_url']}/organizations/#{node['environment']['chef_org']}'" >> /etc/chef/client.rb
-/bin/echo -e "validation_key '/tmp/kitchen/cookbooks/linux_node/recipes/validator.pem'" >> /etc/chef/client.rb
+/bin/echo -e "validation_key '/tmp/kitchen/cookbooks/ap_ubuntu_bootstrap/recipes/validator.pem'" >> /etc/chef/client.rb
 /bin/echo -e "node_name '${NODE_NAME}'" >> /etc/chef/client.rb
 /bin/echo -e "ssl_verify_mode :verify_none" >> /etc/chef/client.rb
 /bin/echo -e "policy_group 'development'" >> /etc/chef/client.rb
-/bin/echo -e "policy_name 'base_linux'" >> /etc/chef/client.rb
+/bin/echo -e "policy_name 'linux_patch'" >> /etc/chef/client.rb
 EOH
 end
 
