@@ -50,3 +50,23 @@ suites:
       environment:
        automate_url: <%= ENV['AUTOMATE_HOSTNAME'] %>
        chef_org: <%= ENV['CHEF_ORG'] %>
+  - name: default_2
+    run_list:
+      - recipe[ap_ubuntu_bootstrap::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      environment:
+       automate_url: <%= ENV['AUTOMATE_HOSTNAME'] %>
+       chef_org: <%= ENV['CHEF_ORG'] %>
+  - name: default_3
+    run_list:
+      - recipe[ap_ubuntu_bootstrap::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
+      environment:
+       automate_url: <%= ENV['AUTOMATE_HOSTNAME'] %>
+       chef_org: <%= ENV['CHEF_ORG'] %>
