@@ -18,7 +18,7 @@ end
 bash 'Create client.rb' do
     code <<-EOH
 
-YOUR_NAME='Reesy'
+YOUR_NAME='Patch'
 
 NODE_NAME=Ubuntu-${YOUR_NAME}-$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 4 | head -n 1)
 
